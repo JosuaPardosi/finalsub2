@@ -3,10 +3,10 @@ if (isset($_POST['submit'])) {
     if (isset($_POST['url'])) {
         $url = $_POST['url'];
     } else {
-        header("Location: analyze.php");
+        header("Location: index.php");
     }
 } else {
-    header("Location: analyze.php");
+    header("Location: index.php");
 }
 ?>
 
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 			<ul class="navbar-nav mr-auto">
 			
 			<li class="nav-item active">
-				<a class="nav-link" href="https://submission2azure.azurewebsites.net/analyze.php">Analisis Gambar<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="https://submission2azure.azurewebsites.net/index.php">Analisis Gambar<span class="sr-only">(current)</span></a>
 			</li>
 		</div>
 		</nav>
