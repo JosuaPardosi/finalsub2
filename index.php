@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
 	$content = fopen($_FILES["fileToUpload"]["tmp_name"], "r");
 	// echo fread($content, filesize($fileToUpload));
 	$blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-	header("Location: analyze.php");
+	header("Location: index.php");
 }
 $listBlobsOptions = new ListBlobsOptions();
 $listBlobsOptions->setPrefix("");
@@ -51,7 +51,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 			<ul class="navbar-nav mr-auto">
 			
 			<li class="nav-item active">
-				<a class="nav-link" href="http://submission2azure.azurewebsites.net/analyze.php">Analisis<span class="sr-only">(current)</span></a>
+				<a class="nav-link" href="http://submission2azure.azurewebsites.net/index.php">Analisis<span class="sr-only">(current)</span></a>
 			</li>
 		</div>
 		</nav>
@@ -63,7 +63,7 @@ $result = $blobClient->listBlobs($containerName, $listBlobsOptions);
 				<span class="border-top my-3"></span>
 			</div>
 		<div class="mt-4 mb-2">
-			<form class="d-flex justify-content-lefr" action="analyze.php" method="post" enctype="multipart/form-data">
+			<form class="d-flex justify-content-lefr" action="index.php" method="post" enctype="multipart/form-data">
 				<input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png" required="">
 				<input type="submit" name="submit" value="Upload">
 			</form>
